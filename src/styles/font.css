@@ -1,35 +1,68 @@
+
 @font-face {
-	font-family: "Atlas Grotesk";
-	src: url("https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Regular-Web.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
+  font-family: "Sao Torpes";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/sao-torpes.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "Optima";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/optima-400.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Atlas Grotesk";
-	src: url("https://pudding.cool/assets/fonts/atlas/AtlasGrotesk-Bold-Web.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
+  font-family: "Optima";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/optima-700.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Tiempos Text Web";
-	src: url("https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2") format("woff2");
-	font-weight: 400;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 400;
+  src: url("assets/fonts/Geist-Regular.woff2") format("woff2");
 }
 
 @font-face {
-	font-family: "Tiempos Text Web";
-	src: url("https://pudding.cool/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2") format("woff2");
-	font-weight: 700;
-	font-style: normal;
-	font-stretch: normal;
-	font-display: swap;
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 700;
+  src: url("assets/fonts/Geist-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-weight: 900;
+  src: url("assets/fonts/Geist-Black.woff2") format("woff2");
+}
+
+/* figtree-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/figtree-v6-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 700;
+  src: url('assets/fonts/figtree-v6-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* figtree-900 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Figtree';
+  font-style: normal;
+  font-weight: 900;
+  src: url('assets/fonts/figtree-v6-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }

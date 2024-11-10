@@ -1,13 +1,4 @@
 {
-  "category": {
-    "blue": "#4477AA",
-    "red": "#EE6677",
-    "green": "#228833",
-    "yellow": "#CCBB44",
-    "cyan": "#66CCEE",
-    "purple": "#AA3377",
-    "gray": "#BBBBBB"
-  },
   "color": {
     "black": "#000000",
     "white": "#ffffff",
@@ -22,11 +13,10 @@
     "gray-800": "rgb(55, 55, 55)",
     "gray-900": "rgb(38, 38, 38)",
     "gray-1000": "rgb(25, 25, 25)",
-    "purple": "#a239ca",
-    "blue": "#4717f6",
-    "green": "#34a29e",
-    "red": "#ff533d",
-    "yellow": "#e5e338"
+    "red": "#CC1A20",
+    "red2": "#e30107",
+    "cream": "#F8F1E6",
+    "cream2": "#FAF5ED"
   },
   "": {
     "12px": "0.75rem",

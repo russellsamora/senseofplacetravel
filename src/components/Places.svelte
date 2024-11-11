@@ -35,44 +35,51 @@
 	$inspect({ liHeight, top });
 </script>
 
-<div class="images">
-	{#each copy.places as name, i}
-		{@const src = getImage(name)}
-		{@const active = i <= scrollIndex}
-		<!-- {@const transform = `translate(${i * 8}px, ${i * 8}px)`} -->
-		<img class:active {src} alt="test" />
-	{/each}
-	<div class="texture"></div>
-</div>
+<div class="c">
+	<div class="images">
+		{#each copy.places as name, i}
+			{@const src = getImage(name)}
+			{@const active = i <= scrollIndex}
+			<!-- {@const transform = `translate(${i * 8}px, ${i * 8}px)`} -->
+			<img class:active {src} alt="test" />
+		{/each}
+		<div class="texture"></div>
+	</div>
 
-<!-- use:inView={{ bottom: viewport.height / 2 }}
+	<!-- use:inView={{ bottom: viewport.height / 2 }}
 			onenter={() => onEnter(i)}
 			onexit={() => onExit(i)} -->
-<ul>
-	<Scrolly {top} {bottom} bind:value={scrollIndex}>
-		{#each copy.places as name, i}
-			{@const city = name.split(",")[0].trim()}
-			{@const country = name.split(",")[1].trim()}
-			{@const img = getImage(name)}
-			<li class:active={i === scrollIndex} bind:offsetHeight={liHeight}>
-				<span class="city"
-					><span class="text text-outline"
-						>{city}<img src="assets/places/test.jpg" alt={name} /></span
-					></span
-				>
-				<span class="country text-outline">{country}</span>
-				<button>View Itinerary</button>
-			</li>
-		{/each}
-	</Scrolly>
-</ul>
+	<ul>
+		<Scrolly {top} {bottom} bind:value={scrollIndex}>
+			{#each copy.places as name, i}
+				{@const city = name.split(",")[0].trim()}
+				{@const country = name.split(",")[1].trim()}
+				{@const img = getImage(name)}
+				<li class:active={i === scrollIndex} bind:offsetHeight={liHeight}>
+					<span class="city"
+						><span class="text text-outline"
+							>{city}<img src="assets/places/test.jpg" alt={name} /></span
+						></span
+					>
+					<span class="country text-outline">{country}</span>
+					<button>View Itinerary</button>
+				</li>
+			{/each}
+		</Scrolly>
+	</ul>
+</div>
 
 <style>
+	.c {
+		position: relative;
+	}
+
 	ul {
 		list-style: none;
 		padding: 0 16px;
 		margin: 0;
 		margin-top: 25svh;
+		/* margin-top: -75svh; */
 	}
 
 	li {
@@ -84,6 +91,11 @@
 		padding: 1.25em 0;
 		opacity: 0.5;
 		letter-spacing: 0.05em;
+	}
+
+	li:last-of-type {
+		/* padding-bottom: 50vh; */
+		padding-bottom: 0;
 	}
 
 	li.active {
@@ -150,11 +162,14 @@
 
 	.images {
 		position: fixed;
-		top: 50%;
+		/* top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%); */
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
+		/* height: 100svh; */
 		/* width: 640px; */
 		/* height: 480px; */
 	}

@@ -31,7 +31,19 @@
 			<p>{@html value}</p>
 		{/each}
 	</section>
+
 	<Places />
+
+	<section>
+		<h2>How It Works</h2>
+		{#each copy.how as { type, value }}
+			{#if type === "step"}
+				<h3>{@html value}</h3>
+			{:else}
+				<p>{@html value}</p>
+			{/if}
+		{/each}
+	</section>
 </div>
 
 <style>
@@ -59,10 +71,17 @@
 		font-weight: bold;
 		letter-spacing: 0.05em;
 		color: var(--color-primary);
+		margin-top: 2em;
 	}
 
 	section p {
 		font-size: clamp(16px, 2.25vw, 28px);
-		margin: 16px auto;
+		margin: 0.5em auto;
+	}
+
+	section h3 {
+		font-size: clamp(16px, 2.25vw, 28px);
+		margin: 1em auto 0.5em auto;
+		font-weight: bold;
 	}
 </style>

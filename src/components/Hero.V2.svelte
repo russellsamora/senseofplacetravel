@@ -65,6 +65,7 @@
 		height: 100%;
 		background: url("assets/texture-dust.png");
 		opacity: 0.25;
+		display: none;
 	}
 
 	.c:after {

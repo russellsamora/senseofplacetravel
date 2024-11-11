@@ -2,24 +2,15 @@
 	import { getContext } from "svelte";
 	import deburr from "lodash.deburr";
 	import Viewport from "$runes/Viewport.svelte.js";
-	import inView from "$actions/inView.js";
 	import Scrolly from "$components/helpers/Scrolly.svelte";
 
+	let { content } = $props();
 	const viewport = new Viewport();
-	const copy = getContext("copy");
 
 	let scrollIndex = $state();
 	let liHeight = $state(0);
 	let top = $derived((viewport.height - liHeight) / 2);
 	let bottom = $derived(top);
-
-	// function onEnter(i) {
-	// 	scrollIndex = i;
-	// }
-
-	// function onExit(i) {
-	// 	scrollIndex = undefined;
-	// }
 
 	function getImage(name) {
 		const a = deburr(name).toLowerCase();
@@ -37,21 +28,17 @@
 
 <div class="c">
 	<div class="images">
-		{#each copy.places as name, i}
+		{#each content as name, i}
 			{@const src = getImage(name)}
 			{@const active = i <= scrollIndex}
-			<!-- {@const transform = `translate(${i * 8}px, ${i * 8}px)`} -->
 			<img class:active {src} alt="test" />
 		{/each}
 		<div class="texture"></div>
 	</div>
 
-	<!-- use:inView={{ bottom: viewport.height / 2 }}
-			onenter={() => onEnter(i)}
-			onexit={() => onExit(i)} -->
 	<ul>
 		<Scrolly {top} {bottom} bind:value={scrollIndex}>
-			{#each copy.places as name, i}
+			{#each content as name, i}
 				{@const city = name.split(",")[0].trim()}
 				{@const country = name.split(",")[1].trim()}
 				{@const img = getImage(name)}
@@ -140,7 +127,7 @@
 		opacity: 0;
 		transform-origin: 50%;
 		transform: scale(0.25);
-		transition: all 0.5s ease-in-out;
+		transition: all 0.25s ease-in-out;
 	}
 
 	.active img {

@@ -1,6 +1,7 @@
 <script>
 	import { setContext } from "svelte";
 	import { browser } from "$app/environment";
+	import CMS from "$components/helpers/CMS.svelte";
 	import Meta from "$components/Meta.svelte";
 	import Hero from "$components/Hero.svelte";
 	import Places from "$components/Places.svelte";
@@ -10,6 +11,8 @@
 	version();
 
 	const preloadFont = [];
+	const components = { Places };
+	const { body } = copy;
 
 	setContext("copy", copy);
 	// const { title, description, url, keywords } = copy;
@@ -18,32 +21,7 @@
 <!-- <Meta {title} {description} {url} {preloadFont} {keywords} /> -->
 <div class="c">
 	<Hero />
-	<section>
-		<h2>What We Do</h2>
-		{#each copy.what as { value }}
-			<p>{@html value}</p>
-		{/each}
-	</section>
-
-	<section>
-		<h2>Where We Go</h2>
-		{#each copy.where as { value }}
-			<p>{@html value}</p>
-		{/each}
-	</section>
-
-	<Places />
-
-	<section>
-		<h2>How It Works</h2>
-		{#each copy.how as { type, value }}
-			{#if type === "step"}
-				<h3>{@html value}</h3>
-			{:else}
-				<p>{@html value}</p>
-			{/if}
-		{/each}
-	</section>
+	<CMS {body} {components} />
 </div>
 
 <style>
@@ -59,29 +37,4 @@
 		background: url("assets/texture-grid.png");
 		opacity: 0.2;
 	} */
-
-	section {
-		max-width: 640px;
-		margin: 32px auto;
-	}
-
-	section h2 {
-		/* font-family: var(--serif); */
-		/* text-transform: uppercase; */
-		font-weight: bold;
-		letter-spacing: 0.05em;
-		color: var(--color-primary);
-		margin-top: 2em;
-	}
-
-	section p {
-		font-size: clamp(16px, 2.25vw, 28px);
-		margin: 0.5em auto;
-	}
-
-	section h3 {
-		font-size: clamp(16px, 2.25vw, 28px);
-		margin: 1em auto 0.5em auto;
-		font-weight: bold;
-	}
 </style>

@@ -18,7 +18,7 @@
 
 	/* presets (used in reset.css) */
 	--border-radius: 2px;
-	--font-body: var(--sans);
+	--font-body: var(--serif);
 	--font-form: var(--sans);
 	--color-bg: var(--color-cream);
 	--color-fg: var(--color-gray-1000);
@@ -52,26 +52,32 @@ body {
 
 h1 {
 	font-size: var(--48px, 48px);
+	font-weight: 400;
 }
 
 h2 {
 	font-size: var(--36px, 36px);
+	font-weight: 400;
 }
 
 h3 {
 	font-size: var(--28px, 28px);
+	font-weight: 400;
 }
 
 h4 {
 	font-size: var(--24px, 24px);
+	font-weight: 400;
 }
 
 h5 {
 	font-size: var(--22px, 22px);
+	font-weight: 400;
 }
 
 h6 {
 	font-size: var(--20px, 20px);
+	font-weight: 400;
 }
 
 

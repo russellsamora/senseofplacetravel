@@ -4,7 +4,9 @@
 	<!-- <img class="boat" src="assets/boat.png" alt="boat" /> -->
 	<img class="logo" src="assets/logo@2x.png" alt="logo" />
 	<div class="texture"></div>
-	<h1><span>Sense</span> <span>of</span> <span>Place</span></h1>
+	<h1 class="text-outline">
+		<span>Sense</span> <span>of</span> <span>Place</span>
+	</h1>
 </div>
 
 <p>
@@ -97,6 +99,7 @@
 		width: 100%;
 		opacity: 0.9;
 		flex-direction: column;
+		letter-spacing: 0.05em;
 	}
 
 	span:nth-of-type(2) {
@@ -112,6 +115,7 @@
 		line-height: 1.2;
 		max-width: 20em;
 		margin: 0 auto;
+		transform: translateY(-0.5em);
 		/* font-weight: 700; */
 		/* font-family: var(--sans); */
 	}

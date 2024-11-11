@@ -18,6 +18,19 @@
 <!-- <Meta {title} {description} {url} {preloadFont} {keywords} /> -->
 <div class="c">
 	<Hero />
+	<section>
+		<h2>What We Do</h2>
+		{#each copy.what as { value }}
+			<p>{@html value}</p>
+		{/each}
+	</section>
+
+	<section>
+		<h2>Where We Go</h2>
+		{#each copy.where as { value }}
+			<p>{@html value}</p>
+		{/each}
+	</section>
 	<Places />
 </div>
 
@@ -34,4 +47,22 @@
 		background: url("assets/texture-grid.png");
 		opacity: 0.2;
 	} */
+
+	section {
+		max-width: 640px;
+		margin: 32px auto;
+	}
+
+	section h2 {
+		/* font-family: var(--serif); */
+		/* text-transform: uppercase; */
+		font-weight: bold;
+		letter-spacing: 0.05em;
+		color: var(--color-primary);
+	}
+
+	section p {
+		font-size: clamp(16px, 2.25vw, 28px);
+		margin: 16px auto;
+	}
 </style>

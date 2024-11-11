@@ -142,28 +142,42 @@ h6 {
 	}
 }
 
+a {
+	color: var(--color-link);
+}
 
 section {
-		max-width: 640px;
-		margin: 32px auto;
-	}
+	max-width: 640px;
+	margin: 32px auto;
+	padding: 0 16px;
+}
 
-	section h2 {
-		/* font-family: var(--serif); */
-		/* text-transform: uppercase; */
-		font-weight: bold;
-		letter-spacing: 0.05em;
-		color: var(--color-primary);
-		margin-top: 2em;
-	}
+section#places {
+	max-width: 100%;
+	margin: 32px auto;
+}
 
-	section p {
-		font-size: clamp(16px, 2.25vw, 28px);
-		margin: 0.5em auto;
-	}
+section h2 {
+	/* font-family: var(--serif); */
+	/* text-transform: uppercase; */
+	font-size: clamp(24px, 2.75vw, 36px);
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	color: var(--color-primary);
+	margin-top: 2em;
+}
 
-	section h3 {
-		font-size: clamp(16px, 2.25vw, 28px);
-		margin: 1em auto 0.5em auto;
-		font-weight: bold;
-	}
+section p {
+	font-size: clamp(16px, 2.25vw, 28px);
+	margin: 0.5em auto;
+}
+
+section h3 {
+	font-size: clamp(16px, 2.25vw, 28px);
+	margin: 1em auto 0.5em auto;
+	font-weight: bold;
+}
+
+section#contact {
+	padding-bottom: 25svh;
+}

@@ -22,8 +22,6 @@
 			.toLowerCase();
 		return `assets/places/${b}.jpg`;
 	}
-
-	$inspect({ liHeight, top });
 </script>
 
 <div class="c">
@@ -43,10 +41,7 @@
 				{@const country = name.split(",")[1].trim()}
 				{@const img = getImage(name)}
 				<li class:active={i === scrollIndex} bind:offsetHeight={liHeight}>
-					<span class="city"
-						><span class="text text-outline"
-							>{city}<img src="assets/places/test.jpg" alt={name} /></span
-						></span
+					<span class="city"><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
 					<button>View Itinerary</button>
@@ -64,9 +59,7 @@
 	ul {
 		list-style: none;
 		padding: 0 16px;
-		margin: 0;
-		margin-top: 25svh;
-		/* margin-top: -75svh; */
+		margin: 25svh auto;
 	}
 
 	li {
@@ -81,7 +74,6 @@
 	}
 
 	li:last-of-type {
-		/* padding-bottom: 50vh; */
 		padding-bottom: 0;
 	}
 
@@ -152,6 +144,7 @@
 		/* top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%); */
+		pointer-events: none;
 		top: 0;
 		left: 0;
 		width: 100%;

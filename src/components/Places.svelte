@@ -3,6 +3,7 @@
 	import deburr from "lodash.deburr";
 	import Viewport from "$runes/Viewport.svelte.js";
 	import Scrolly from "$components/helpers/Scrolly.svelte";
+	import Document from "$svg/document.svg";
 
 	let { content } = $props();
 	const viewport = new Viewport();
@@ -11,6 +12,7 @@
 	let liHeight = $state(0);
 	let top = $derived((viewport.height - liHeight) / 2);
 	let bottom = $derived(top);
+	let hasSample = $derived(scrollIndex !== undefined);
 
 	function getImage(name) {
 		const a = deburr(name).toLowerCase();
@@ -44,11 +46,20 @@
 					<span class="city"><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
-					<button>View Itinerary</button>
+					<button class="xx" class:visible={hasSample}>
+						<span class="icon">{@html Document}</span>
+						<span class="text text-outline"> View Sample Itinerary </span>
+					</button>
 				</li>
 			{/each}
 		</Scrolly>
 	</ul>
+
+	<button class="sample" class:visible={hasSample}>
+		<span class="bg"></span>
+		<span class="icon">{@html Document}</span>
+		<span class="text"> View Itinerary </span>
+	</button>
 </div>
 
 <style>
@@ -87,7 +98,7 @@
 		color: var(--color-primary);
 	}
 
-	span.text {
+	span {
 		position: relative;
 	}
 
@@ -174,17 +185,88 @@
 		left: 0;
 	}
 
-	button {
-		font-size: clamp(16px, 0.25em, 48px);
-		width: 10em;
-		position: relative;
+	button.sample {
+		position: fixed;
+		font-size: var(--16px);
+		width: 8em;
+		height: 8em;
+		border-radius: 50%;
+		bottom: 16px;
+		right: 16px;
 		border: none;
-		background: transparent;
-		border-bottom: 2px solid currentColor;
-		font-family: var(--sans);
-		text-transform: uppercase;
+		background: none;
+		overflow: hidden;
+		/* border: 1px solid var(--color-primary); */
+		/* background: var(--color-primary); */
+		/* background: rgba(255, 255, 255, 0.1); */
+		color: var(--color-primary);
+		display: flex;
+		/* text-transform: uppercase; */
 		font-weight: bold;
-		margin-top: 1em;
+		font-family: var(--mono);
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		line-height: 1.2;
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.25s ease-in-out;
+		cursor: pointer;
+		z-index: var(--z-top);
+		/* box-shadow: 4px 4px 0 2px red; */
+	}
+
+	button.sample:hover {
+		border-radius: 40%;
+	}
+
+	.bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: var(--color-bg);
+		opacity: 0.75;
+	}
+
+	button.sample .icon {
+		margin-bottom: 8px;
+	}
+
+	button.sample .text {
+		--color-text-outline: var(--color-fg);
+	}
+
+	button.sample.visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	:global(button.sample svg) {
+		display: block;
+		width: 2em;
+		height: auto;
+	}
+
+	button.xx {
 		display: none;
+		font-size: var(--16px);
+		color: var(--color-bg);
+		/* display: flex; */
+		background: none;
+		border: none;
+		font-weight: bold;
+		font-family: var(--mono);
+		justify-content: center;
+		align-items: center;
+		line-height: 1;
+		--color-text-outline: var(--color-fg);
+	}
+
+	:global(button.xx svg) {
+		display: block;
+		width: 2em;
+		height: 2em;
 	}
 </style>

@@ -1,12 +1,11 @@
 <div class="c">
 	<img class="bg" src="assets/lake-inline--burma@2x.jpg" alt="lake" />
-	<!-- <img class="lake" src="assets/lake.png" alt="lake" /> -->
-	<!-- <img class="boat" src="assets/boat.png" alt="boat" /> -->
 	<img class="logo" src="assets/logo@2x.png" alt="logo" />
 	<div class="texture"></div>
 	<h1 class="text-outline">
 		<span>Sense</span> <span>of</span> <span>Place</span>
 	</h1>
+	<a href="#info">Contact</a>
 </div>
 
 <p>
@@ -109,7 +108,7 @@
 	}
 
 	p {
-		font-size: clamp(20px, 4vw, 40px);
+		font-size: clamp(24px, 4vw, 48px);
 		text-align: center;
 		padding: 16px;
 		color: var(--color-fg);
@@ -121,16 +120,12 @@
 		/* font-family: var(--sans); */
 	}
 
-	@keyframes bob {
-		0% {
-			transform: translateY(0);
-		}
-		50% {
-			transform: translateY(8px) rotate(2deg);
-		}
-		100% {
-			transform: translateY(0);
-		}
+	a {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		line-height: 1;
+		font-weight: bold;
 	}
 
 	@media (min-width: 600px) {

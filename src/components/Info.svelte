@@ -2,7 +2,7 @@
 	let { email, phone } = $props();
 </script>
 
-<div class="c">
+<div id="info" class="c">
 	<p><span>email:</span> <a href="mailto:{email}">{email}</a></p>
 	<p><span>phone:</span> <a href="tel:{phone}">{phone}</a></p>
 </div>
@@ -15,7 +15,8 @@
 		/* justify-content: center; */
 	}
 
-	p {
+	span {
+		display: none;
 	}
 
 	a {

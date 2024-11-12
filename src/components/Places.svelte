@@ -77,7 +77,8 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: clamp(32px, 5vw, 128px);
+		font-size: clamp(36px, 5vw, 128px);
+		text-align: center;
 		line-height: 1;
 		padding: 1.25em 0;
 		opacity: 0.5;

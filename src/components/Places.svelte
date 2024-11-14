@@ -13,6 +13,7 @@
 	let top = $derived((viewport.height - liHeight) / 2);
 	let bottom = $derived(top);
 	let hasSample = $derived(scrollIndex !== undefined);
+	let highlight = $state(false);
 
 	function getImage(name) {
 		const a = deburr(name).toLowerCase();
@@ -27,13 +28,12 @@
 </script>
 
 <div class="c">
-	<div class="images">
+	<div class="images" class:highlight>
 		{#each content as name, i}
 			{@const src = getImage(name)}
 			{@const active = i <= scrollIndex}
 			<img class:active {src} alt="test" />
 		{/each}
-		<div class="texture"></div>
 	</div>
 
 	<ul>
@@ -42,8 +42,17 @@
 				{@const city = name.split(",")[0].trim()}
 				{@const country = name.split(",")[1].trim()}
 				{@const img = getImage(name)}
-				<li class:active={i === scrollIndex} bind:offsetHeight={liHeight}>
-					<span class="city"><span class="text text-outline">{city}</span></span
+				{@const active = i === scrollIndex}
+				<li class:active bind:offsetHeight={liHeight}>
+					<!-- svelte-ignore a11y_no_static_element_interactions -->
+					<span
+						class="city"
+						onmouseenter={() => {
+							if (active) highlight = true;
+						}}
+						onmouseleave={() => {
+							if (active) highlight = false;
+						}}><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
 					<button class="xx" class:visible={hasSample}>
@@ -97,6 +106,7 @@
 		font-family: var(--sans-hed);
 		font-weight: 900;
 		color: var(--color-primary);
+		cursor: pointer;
 	}
 
 	span {
@@ -173,9 +183,6 @@
 		object-fit: cover;
 		opacity: 0;
 		filter: grayscale(1);
-		/* border-radius: 16px; */
-		/* border: 1px solid var(--color-primary); */
-		/* top: 20%; */
 		left: 0;
 		transition: all 0.5s ease-in-out;
 	}
@@ -186,9 +193,12 @@
 		left: 0;
 	}
 
+	.highlight img.active {
+		filter: grayscale(0.33);
+	}
+
 	button.sample {
 		position: fixed;
-		font-size: var(--16px);
 		width: 8em;
 		height: 8em;
 		border-radius: 50%;
@@ -202,9 +212,6 @@
 		/* background: rgba(255, 255, 255, 0.1); */
 		color: var(--color-primary);
 		display: flex;
-		/* text-transform: uppercase; */
-		font-weight: bold;
-		font-family: var(--mono);
 		justify-content: center;
 		flex-direction: column;
 		align-items: center;
@@ -214,6 +221,7 @@
 		transition: all 0.25s ease-in-out;
 		cursor: pointer;
 		z-index: var(--z-top);
+		border: 1px solid var(--color-primary);
 		/* box-shadow: 4px 4px 0 2px red; */
 	}
 

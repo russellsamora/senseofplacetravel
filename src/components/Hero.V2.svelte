@@ -125,7 +125,6 @@
 		top: 16px;
 		right: 16px;
 		line-height: 1;
-		font-weight: bold;
 	}
 
 	@media (min-width: 600px) {

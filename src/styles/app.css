@@ -176,6 +176,46 @@ section h3 {
 	font-weight: bold;
 }
 
+
 section#contact {
-	padding-bottom: 25svh;
+	max-width: 100%;
+	margin: 32px auto;
+}
+
+section#contact h2 {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 0 16px;
+}
+
+a, button {
+	font-family: var(--sans);
+	text-transform: uppercase;
+	font-weight: 900;
+}
+
+section#about {
+	display: flex;
+	flex-direction: column;
+}
+
+section#about img {
+	border-radius: 50%;
+	filter: grayscale(1);
+	max-width: 192px;
+	margin: 1em auto;
+	order: 3;
+}
+
+
+@media screen and (min-width: 960px) {
+	section#about {
+		display: block;
+	}
+	
+	section#about img {
+		float: right;
+		width: 35%;
+		margin: 0.5em 1em;
+	}
 }

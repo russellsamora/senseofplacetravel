@@ -24,8 +24,8 @@
 	--color-fg: var(--color-gray-1000);
 	--color-primary: var(--color-red);
 	--color-link: var(--color-gray-1000);
-	--color-focus: var(--color-red);
-	--color-mark: var(--color-red);
+	--color-focus: var(--color-pink);
+	--color-mark: var(--color-pink);
 	--color-selection: var(--color-gray-300);
 	--color-border: var(--color-gray-300);
 	--color-button-bg: var(--color-gray-300);
@@ -167,9 +167,10 @@ section h2 {
 	margin-top: 2em;
 }
 
-section p, section h3 {
+section p, section h3, section aside {
 	font-size: clamp(18px, 2.25vw, 28px);
 	margin: 0.5em auto;
+	line-height: 1.6;
 }
 
 section h3 {
@@ -205,6 +206,11 @@ section#about img {
 	max-width: 192px;
 	margin: 1em auto;
 	order: 3;
+}
+
+mark {
+	background: var(--color-mark);
+	padding: 0.25em;
 }
 
 

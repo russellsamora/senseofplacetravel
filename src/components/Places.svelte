@@ -1,11 +1,13 @@
 <script>
 	import { getContext } from "svelte";
-	import deburr from "lodash.deburr";
+
 	import Viewport from "$runes/Viewport.svelte.js";
 	import Scrolly from "$components/helpers/Scrolly.svelte";
+	import Itinerary from "$components/Itinerary.svelte";
 	import Document from "$svg/document.svg";
+	import slugify from "$utils/slugify.js";
 
-	let { content } = $props();
+	let { content, onView } = $props();
 	const viewport = new Viewport();
 
 	let scrollIndex = $state();
@@ -13,17 +15,16 @@
 	let top = $derived((viewport.height - liHeight) / 2);
 	let bottom = $derived(top);
 	let hasSample = $derived(scrollIndex !== undefined);
+	let currentPlace = $derived.by(() => {
+		const place = content[scrollIndex];
+		return slugify(place);
+	});
 	let highlight = $state(false);
+	let showItinerary = $state(false);
 
 	function getImage(name) {
-		const a = deburr(name).toLowerCase();
-
-		const b = a
-			.replace(", ", "-")
-			.replace(/ /g, "_")
-			.replace(/[^a-z\-\_]/g, "")
-			.toLowerCase();
-		return `assets/places/${b}.jpg`;
+		const a = slugify(name);
+		return `assets/places/${a}.jpg`;
 	}
 </script>
 
@@ -55,21 +56,29 @@
 						}}><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
-					<button class="xx" class:visible={hasSample}>
+					<!-- <button class="xx" class:visible={hasSample}>
 						<span class="icon">{@html Document}</span>
 						<span class="text text-outline"> View Sample Itinerary </span>
-					</button>
+					</button> -->
 				</li>
 			{/each}
 		</Scrolly>
 	</ul>
 
-	<button class="sample" class:visible={hasSample}>
+	<button
+		class="sample"
+		class:visible={hasSample}
+		onclick={() => (showItinerary = true)}
+	>
 		<span class="bg"></span>
 		<span class="icon">{@html Document}</span>
 		<span class="text"> View Itinerary </span>
 	</button>
 </div>
+
+{#if showItinerary}
+	<Itinerary place={currentPlace} />
+{/if}
 
 <style>
 	.c {
@@ -258,11 +267,10 @@
 		height: auto;
 	}
 
-	button.xx {
+	/* button.xx {
 		display: none;
 		font-size: var(--16px);
 		color: var(--color-bg);
-		/* display: flex; */
 		background: none;
 		border: none;
 		font-weight: bold;
@@ -271,11 +279,11 @@
 		align-items: center;
 		line-height: 1;
 		--color-text-outline: var(--color-fg);
-	}
+	} */
 
-	:global(button.xx svg) {
+	/* :global(button.xx svg) {
 		display: block;
 		width: 2em;
 		height: 2em;
-	}
+	} */
 </style>

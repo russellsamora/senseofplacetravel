@@ -23,7 +23,7 @@
 	--color-bg: var(--color-cream);
 	--color-fg: var(--color-gray-1000);
 	--color-primary: var(--color-red);
-	--color-link: var(--color-gray-1000);
+	--color-link: var(--color-red);
 	--color-focus: var(--color-pink);
 	--color-mark: var(--color-pink);
 	--color-selection: var(--color-gray-300);
@@ -167,10 +167,10 @@ section h2 {
 	margin-top: 2em;
 }
 
-section p, section h3, section aside {
+section p, section h3 {
 	font-size: clamp(18px, 2.25vw, 28px);
 	margin: 0.5em auto;
-	line-height: 1.6;
+	line-height: 1.5;
 }
 
 section h3 {

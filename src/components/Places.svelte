@@ -1,5 +1,5 @@
 <script>
-	import { getContext } from "svelte";
+	import { fade } from "svelte/transition";
 
 	import Viewport from "$runes/Viewport.svelte.js";
 	import Scrolly from "$components/helpers/Scrolly.svelte";
@@ -21,6 +21,11 @@
 	});
 	let highlight = $state(false);
 	let showItinerary = $state(false);
+
+	$effect(() => {
+		if (showItinerary) document.body.style.overflow = "hidden";
+		else document.body.style.overflow = "auto";
+	});
 
 	function getImage(name) {
 		const a = slugify(name);
@@ -77,7 +82,9 @@
 </div>
 
 {#if showItinerary}
-	<Itinerary place={currentPlace} />
+	<div in:fade={{ duration: 250 }}>
+		<Itinerary place={currentPlace} close={() => (showItinerary = false)} />
+	</div>
 {/if}
 
 <style>
@@ -98,7 +105,7 @@
 		font-size: clamp(36px, 5vw, 128px);
 		text-align: center;
 		line-height: 1;
-		padding: 1.25em 0;
+		padding: 10svh 0;
 		opacity: 0.5;
 		letter-spacing: 0.05em;
 	}

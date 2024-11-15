@@ -14,10 +14,10 @@
 	let liHeight = $state(0);
 	let top = $derived((viewport.height - liHeight) / 2);
 	let bottom = $derived(top);
-	let hasSample = $derived(scrollIndex !== undefined);
+	let hasSample = $derived(content[scrollIndex]?.itinerary);
 	let currentPlace = $derived.by(() => {
-		const place = content[scrollIndex];
-		return slugify(place);
+		const name = content[scrollIndex]?.name;
+		return slugify(name);
 	});
 	let highlight = $state(false);
 	let showItinerary = $state(false);
@@ -35,7 +35,7 @@
 
 <div class="c">
 	<div class="images" class:highlight>
-		{#each content as name, i}
+		{#each content as { name }, i}
 			{@const src = getImage(name)}
 			{@const active = i <= scrollIndex}
 			<img class:active {src} alt="test" />
@@ -44,7 +44,7 @@
 
 	<ul>
 		<Scrolly {top} {bottom} bind:value={scrollIndex}>
-			{#each content as name, i}
+			{#each content as { name }, i}
 				{@const city = name.split(",")[0].trim()}
 				{@const country = name.split(",")[1].trim()}
 				{@const img = getImage(name)}
@@ -223,9 +223,6 @@
 		border: none;
 		background: none;
 		overflow: hidden;
-		/* border: 1px solid var(--color-primary); */
-		/* background: var(--color-primary); */
-		/* background: rgba(255, 255, 255, 0.1); */
 		color: var(--color-primary);
 		display: flex;
 		justify-content: center;

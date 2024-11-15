@@ -34,6 +34,10 @@
 		overflow: auto;
 	}
 
+	:global(.itinerary section) {
+		max-width: 720px;
+	}
+
 	:global(.itinerary section span) {
 		display: block;
 	}

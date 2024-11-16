@@ -1,10 +1,10 @@
 <script>
-	let { email, emailText, phone } = $props();
+	let { email, emailText } = $props();
 </script>
 
 <div id="info" class="c">
 	<p><a href="mailto:{email}">{@html emailText}</a></p>
-	<p><a href="tel:{phone}">{phone}</a></p>
+	<!-- <p><a href="tel:{phone}">{phone}</a></p> -->
 </div>
 
 <style>

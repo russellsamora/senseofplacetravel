@@ -61,10 +61,6 @@
 						}}><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
-					<!-- <button class="xx" class:visible={hasSample}>
-						<span class="icon">{@html Document}</span>
-						<span class="text text-outline"> View Sample Itinerary </span>
-					</button> -->
 				</li>
 			{/each}
 		</Scrolly>
@@ -131,65 +127,19 @@
 
 	span.country {
 		font-size: clamp(16px, 0.4em, 64px);
-
-		/* color: var(--color-fg);
-		font-family: var(--serif);
-		font-weight: bold;
-		opacity: 1; */
-
 		color: var(--color-primary);
 		opacity: 0.8;
 		font-family: var(--sans-hed);
 		font-weight: normal;
-
-		/* color: var(--color-fg);
-		font-family: var(--sans);
-		font-weight: bold;
-		opacity: 0.6; */
-	}
-
-	li img {
-		position: absolute;
-		width: 3.5em;
-		min-width: 3.5em;
-		border-radius: 16px;
-		filter: grayscale(1);
-		opacity: 0;
-		transform-origin: 50%;
-		transform: scale(0.25);
-		transition: all 0.25s ease-in-out;
-	}
-
-	.active img {
-		/* opacity: 1; */
-		transform: translate(-100%, -0.15em) scale(1);
-	}
-
-	li:nth-of-type(even) img {
-		bottom: 0%;
-		left: -32px;
-		transform: translate(-100%, -0.15em) scale(0.25em);
-	}
-
-	li:nth-of-type(odd) img {
-		bottom: 0%;
-		right: -32px;
-		transform: translate(100%, -0.15em) scale(0.25em);
 	}
 
 	.images {
 		position: fixed;
-		/* top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%); */
 		pointer-events: none;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		/* height: 100svh; */
-		/* width: 640px; */
-		/* height: 480px; */
 	}
 
 	.images img {

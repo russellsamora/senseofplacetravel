@@ -4,7 +4,6 @@
 
 <div id="info" class="c">
 	<p><a href="mailto:{email}">{@html emailText}</a></p>
-	<!-- <p><a href="tel:{phone}">{phone}</a></p> -->
 </div>
 
 <style>
@@ -16,12 +15,7 @@
 		height: 50svh;
 	}
 
-	span {
-		display: none;
-	}
-
 	a {
-		/* font-size: clamp(24px, 2.75vw, 36px); */
 		font-size: clamp(20px, 3.5vw, 84px);
 		text-align: center;
 		line-height: 1;

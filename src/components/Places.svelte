@@ -50,15 +50,7 @@
 				{@const img = getImage(name)}
 				{@const active = i === scrollIndex}
 				<li class:active bind:offsetHeight={liHeight}>
-					<!-- svelte-ignore a11y_no_static_element_interactions -->
-					<span
-						class="city"
-						onmouseenter={() => {
-							if (active) highlight = true;
-						}}
-						onmouseleave={() => {
-							if (active) highlight = false;
-						}}><span class="text text-outline">{city}</span></span
+					<span class="city"><span class="text text-outline">{city}</span></span
 					>
 					<span class="country text-outline">{country}</span>
 				</li>

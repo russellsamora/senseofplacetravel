@@ -62,6 +62,8 @@
 		class="sample"
 		class:visible={hasSample}
 		onclick={() => (showItinerary = true)}
+		onmouseenter={() => (highlight = true)}
+		onmouseleave={() => (highlight = false)}
 	>
 		<span class="bg"></span>
 		<span class="icon">{@html Document}</span>
@@ -212,24 +214,4 @@
 		width: 2em;
 		height: auto;
 	}
-
-	/* button.xx {
-		display: none;
-		font-size: var(--16px);
-		color: var(--color-bg);
-		background: none;
-		border: none;
-		font-weight: bold;
-		font-family: var(--mono);
-		justify-content: center;
-		align-items: center;
-		line-height: 1;
-		--color-text-outline: var(--color-fg);
-	} */
-
-	/* :global(button.xx svg) {
-		display: block;
-		width: 2em;
-		height: 2em;
-	} */
 </style>

@@ -96,8 +96,6 @@
 		max-width: 20em;
 		margin: 0 auto;
 		transform: translateY(-0.5em);
-		/* font-weight: 700; */
-		/* font-family: var(--sans); */
 	}
 
 	a {

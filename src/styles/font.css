@@ -3,7 +3,7 @@
   font-family: "Sao Torpes";
   font-style: normal;
   font-weight: 400;
-  src: url("assets/fonts/sao-torpes.woff2") format("woff2");
+  src: url("/assets/fonts/sao-torpes.woff2") format("woff2");
 }
 
 
@@ -11,58 +11,36 @@
   font-family: "Optima";
   font-style: normal;
   font-weight: 400;
-  src: url("assets/fonts/optima-400.woff2") format("woff2");
+  src: url("/assets/fonts/optima-400.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Optima";
   font-style: normal;
   font-weight: 700;
-  src: url("assets/fonts/optima-700.woff2") format("woff2");
+  src: url("/assets/fonts/optima-700.woff2") format("woff2");
 }
 
-@font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-weight: 400;
-  src: url("assets/fonts/Geist-Regular.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-weight: 700;
-  src: url("assets/fonts/Geist-Bold.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-weight: 900;
-  src: url("assets/fonts/Geist-Black.woff2") format("woff2");
-}
-
-/* figtree-regular - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+/* @font-face {
+  font-display: swap;
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 400;
-  src: url('assets/fonts/figtree-v6-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* figtree-700 - latin */
-@font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  src: url('assets/fonts/figtree-v6-latin-regular.woff2') format('woff2');
+} */
+
+/* @font-face {
+  font-display: swap;
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 700;
-  src: url('assets/fonts/figtree-v6-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-/* figtree-900 - latin */
+  src: url('assets/fonts/figtree-v6-latin-700.woff2') format('woff2');
+} */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 900;
-  src: url('assets/fonts/figtree-v6-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  src: url('assets/fonts/figtree-v6-latin-900.woff2') format('woff2'); 
 }

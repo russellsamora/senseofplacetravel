@@ -5,7 +5,7 @@
 /* colors defined in variables.css */
 :root {
 	/* font */
-	--sans:  "Figtree" BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+	--sans:  "Figtree", BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 	--sans-hed: "Sao Torpes", var(--sans);
 	--serif: "Optima", Iowan Old Style, Times New Roman, Times, serif;
 	--mono: Menlo, Consolas, Monaco, monospace;

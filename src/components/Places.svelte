@@ -44,14 +44,21 @@
 
 	<ul>
 		<Scrolly {top} {bottom} bind:value={scrollIndex}>
-			{#each content as { name }, i}
+			{#each content as { name, itinerary }, i}
 				{@const city = name.split(",")[0].trim()}
 				{@const country = name.split(",")[1].trim()}
 				{@const img = getImage(name)}
 				{@const active = i === scrollIndex}
-				<li class:active bind:offsetHeight={liHeight}>
-					<span class="city"><span class="text text-outline">{city}</span></span
-					>
+				<li class:active class:itinerary bind:offsetHeight={liHeight}>
+					<span class="city">
+						{#if itinerary}
+							<button onclick={() => (showItinerary = true)}>
+								<span class="text text-outline">{city}</span>
+							</button>
+						{:else}
+							<span class="text text-outline">{city}</span>
+						{/if}
+					</span>
 					<span class="country text-outline">{country}</span>
 				</li>
 			{/each}
@@ -85,7 +92,7 @@
 	ul {
 		list-style: none;
 		padding: 0 16px;
-		margin: 25svh auto;
+		margin: 33svh auto;
 	}
 
 	li {
@@ -112,11 +119,26 @@
 		font-family: var(--sans-hed);
 		font-weight: 900;
 		color: var(--color-primary);
+	}
+
+	span.city .text {
+		letter-spacing: 0.05em;
+	}
+
+	.city button {
+		background: none;
+		border: none;
 		cursor: pointer;
+		font-family: inherit;
+		color: inherit;
 	}
 
 	span {
 		position: relative;
+	}
+
+	span.city.itinerary {
+		cursor: pointer;
 	}
 
 	span.country {
@@ -179,11 +201,7 @@
 		cursor: pointer;
 		z-index: var(--z-top);
 		border: 1px solid var(--color-primary);
-		/* box-shadow: 4px 4px 0 2px red; */
-	}
-
-	button.sample:hover {
-		border-radius: 40%;
+		font-size: var(--14px);
 	}
 
 	.bg {
@@ -213,5 +231,11 @@
 		display: block;
 		width: 2em;
 		height: auto;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		button.sample:hover {
+			border-radius: 40%;
+		}
 	}
 </style>

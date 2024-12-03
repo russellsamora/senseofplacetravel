@@ -92,5 +92,6 @@
 
 	:global(.itinerary button svg path, .itinerary button svg circle) {
 		stroke: var(--color-primary);
+		fill: var(--color-bg);
 	}
 </style>

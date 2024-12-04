@@ -1,9 +1,9 @@
 <script>
-	let { email, emailText } = $props();
+	let { value } = $props();
 </script>
 
 <div id="info" class="c">
-	<p><a href="mailto:{email}">{@html emailText}</a></p>
+	<p>{@html value}</p>
 </div>
 
 <style>
@@ -15,16 +15,17 @@
 		height: 50svh;
 	}
 
-	a {
-		font-size: clamp(20px, 3.5vw, 84px);
+	p {
+		font-size: clamp(28px, 5vw, 48px);
 		text-align: center;
-		line-height: 1;
-		padding: 1.25em 0;
-		text-decoration: none;
-		text-transform: lowercase;
+		padding: 16px;
+		line-height: 1.2;
+		margin: 0 auto;
+		transform: translateY(-0.5em);
 	}
 
-	:global(a span) {
-		font-family: var(--sans-hed);
+	:global(#info a) {
+		text-align: center;
+		text-transform: lowercase;
 	}
 </style>

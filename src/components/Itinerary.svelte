@@ -6,10 +6,6 @@
 
 	let { close, place } = $props();
 	const components = { Ul };
-
-	// $effect(async () => {
-	// 	copy = await loadJson(`assets/itineraries/${place}.json`);
-	// })
 </script>
 
 <div class="c itinerary">

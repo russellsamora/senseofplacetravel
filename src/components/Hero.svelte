@@ -1,3 +1,7 @@
+<script>
+	let { email, tagline } = $props();
+</script>
+
 <div class="c">
 	<img class="bg" src="assets/lake-inline--burma@2x.jpg" alt="lake" />
 	<img class="logo" src="assets/logo@2x.png" alt="logo" />
@@ -5,12 +9,11 @@
 	<h1 class="text-outline">
 		<span>Sense</span> <span>of</span> <span>Place</span>
 	</h1>
-	<a href="#info">Contact</a>
+	<a href="mailto:{email}">Contact</a>
 </div>
 
 <p>
-	Thoughtful, seamless trip planning to spark your curiosity and open new
-	worlds.
+	{@html tagline}
 </p>
 
 <style>

@@ -16,26 +16,12 @@
 	const { body } = copy;
 
 	setContext("copy", copy);
-	// const { title, description, url, keywords } = copy;
+	const { title, description, url, keywords, email, tagline } = copy;
 </script>
 
-<!-- <Meta {title} {description} {url} {preloadFont} {keywords} /> -->
-<div class="c">
-	<Hero />
+<Meta {title} {description} {url} {preloadFont} {keywords} />
+
+<div>
+	<Hero {email} {tagline} />
 	<CMS {body} {components} />
 </div>
-
-<style>
-	/* .c {
-		position: relative;
-	}
-	.texture {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: url("assets/texture-grid.png");
-		opacity: 0.2;
-	} */
-</style>

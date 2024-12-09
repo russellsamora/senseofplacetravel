@@ -11,7 +11,12 @@
 
 	version();
 
-	const preloadFont = [];
+	const preloadFont = [
+		"https://senseofplacetravel.com/assets/fonts/sao-torpes.woff2",
+		"https://senseofplacetravel.com/assets/fonts/optima-400.woff2",
+		"https://senseofplacetravel.com/assets/fonts/optima-700.woff2",
+		"https://senseofplacetravel.com/assets/fonts/figtree-v6-latin-900.woff2"
+	];
 	const components = { Places, Info };
 	const { body } = copy;
 

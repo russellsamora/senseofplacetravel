@@ -21,26 +21,10 @@
   src: url("/assets/fonts/optima-700.woff2") format("woff2");
 }
 
-/* @font-face {
-  font-display: swap;
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 400;
-  src: url('assets/fonts/figtree-v6-latin-regular.woff2') format('woff2');
-} */
-
-/* @font-face {
-  font-display: swap;
-  font-family: 'Figtree';
-  font-style: normal;
-  font-weight: 700;
-  src: url('assets/fonts/figtree-v6-latin-700.woff2') format('woff2');
-} */
-
 @font-face {
   font-display: swap;
   font-family: 'Figtree';
   font-style: normal;
   font-weight: 900;
-  src: url('assets/fonts/figtree-v6-latin-900.woff2') format('woff2'); 
+  src: url('/assets/fonts/figtree-v6-latin-900.woff2') format('woff2'); 
 }

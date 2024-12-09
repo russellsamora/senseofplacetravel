@@ -229,6 +229,6 @@ mark {
 main:after {
 	content: "";
 	display: block;
-	height: 10vh;
+	height: 5vh;
 	background: var(--color-primary);
 }

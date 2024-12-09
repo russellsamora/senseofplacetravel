@@ -2,7 +2,7 @@
 	let {
 		title = "Title TK",
 		description = "Description TK",
-		url = "https://senseofplacetravel.com",
+		url = "",
 		keywords = "",
 		preloadFont = []
 	} = $props();
